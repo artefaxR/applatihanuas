@@ -38,7 +38,7 @@
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Username</label>
                 <select class="form-control" name="username" id="username">
-                  @foreach($avail_user as $user)
+                  @foreach($users as $user)
                   <option value="{{ $user->id }}">{{ $user->username }}</option>
                   @endforeach
                 </select>
