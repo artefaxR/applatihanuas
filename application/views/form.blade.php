@@ -42,6 +42,28 @@
                   @endforeach
                 </select>
             </div>
+              <!-- radio -->
+              <p>Jenis</p>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="radio" id="flexRadioDefault1" value="Berita" required>
+              <label class="form-check-label" for="flexRadioDefault1">
+                Berita
+              </label>
+            </div>
+            <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="radio" id="flexRadioDefault1" value="Tutorial" required>
+              <label class="form-check-label" for="flexRadioDefault1">
+                Tutorial
+              </label>
+            </div>
+            <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="radio" id="flexRadioDefault1" value="Blog" required>
+              <label class="form-check-label" for="flexRadioDefault1">
+                Blog
+              </label>
+            </div>
+            <br>
+            <!-- article section -->
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Artikel</label>
                 <textarea class="form-control" id="nama" name="artikel" rows="3"></textarea>

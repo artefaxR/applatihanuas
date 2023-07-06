@@ -48,10 +48,12 @@ class Welcome extends CI_Controller
     {
         $user_id = $this->input->post('username');
         $artikel = $this->input->post('artikel');
+        $jenis = $this->input->post('radio');
 
         $post= new Post();
         $post->user_id =$user_id;
-        $post->artikel =$artikel;
+        $post->article =$artikel;
+        $post->jenis = $jenis;
         $post->save();
 
         redirect('welcome/tampil');
@@ -67,15 +69,21 @@ class Welcome extends CI_Controller
 
     public function ubah($id)
     {
-        $avail_user =User::all();
+        
         $post = Post::find($id);
-        $this->_createView('update', ['post' => $post, 'avail_user' => $avail_user]);
+        $user = User::all();
+        $jenis = 0;
+        if($post->jenis == 'Berita') $jenis = 0;
+        else if($post->jenis == 'Tutorial') $jenis = 1;
+        else if($post->jenis == 'Blog') $jenis = 2;
+
+        $this->_createView('update', ['post' => $post, 'user' => $user, 'jenis' => $jenis]);
     }
 
     public function update($id){
         $post = Post::find($id);
         $post->user_id = $this->input->post('username');
-        $post->artikel = $this->input->post('artikel');
+        $post->article = $this->input->post('artikel');
         $post->save();
 
         redirect('welcome/tampil');
